@@ -1,0 +1,49 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" [nzCollapsedWidth]="0" nzBreakpoint="lg"
+    [(nzCollapsed)]="isCollapsed">
+    <!-- (mouseenter)="isCollapsed=false" (mouseleave)="isCollapsed=true" -->
+    <div class="sidebar-logo">
+      <a href="https://google.com/" target="_blank">
+        <img src="/assets/Images/logo_4_light.svg" alt="logo">
+        <h1 style="color: #fff;font-weight: 500;">Template</h1>
+      </a>
+    </div>
+    <!-- <div class="sidebar-profile">
+      <nz-avatar [nzSize]="50" nzIcon="user"></nz-avatar>
+      <span>
+        Profile Name
+      </span>
+    </div> -->
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzTitle="Dashboard" nzMatchRouter routerLink="/dashboard">
+        <i nz-icon nzType="dashboard"></i>
+        <span>Dashboard</span>
+      </li>
+      <li nz-submenu nzOpen nzTitle="User Management" nzIcon="user">
+        <ul>
+          <li nz-menu-item nzMatchRouter routerLink="user-management/users">
+            <a>Users</a>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="user-management/roles">
+            <a>Roles</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-menu-item nzTitle="Setting" nzMatchRouter routerLink="/settings">
+        <i nz-icon nzType="setting"></i>
+        <span>Settings</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+
+      <app-primary-header></app-primary-header>
+      <app-secondary-header></app-secondary-header>
+
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

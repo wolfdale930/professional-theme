@@ -1,0 +1,30 @@
+<div class="login-card" data-aos="fade" data-aos-delay="200">
+
+
+  <form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submit()" class="center-form">
+
+    <img src="/assets/Images/logo_4_light.svg" alt="logo" class="logo">
+
+    <h1>Welcome to Template</h1>
+    <span>New Here?<a>SignUp</a></span>
+
+    <nz-form-item style="margin-top: 15px;">
+      <nz-form-label>Email Id</nz-form-label>
+      <nz-form-control nzErrorTip="Please input your Email Id!">
+        <input nz-input formControlName="email" nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>Password</nz-form-label>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <input nz-input formControlName="password" type="password" nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary" nzSize="large" routerLink="/">Submit</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+</div>

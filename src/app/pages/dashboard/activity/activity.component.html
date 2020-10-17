@@ -1,0 +1,12 @@
+<nz-card [nzBordered]="false" style="width: 100%;height: 100%;">
+  <h2>Activity</h2>
+  <nz-divider></nz-divider>
+  <nz-timeline [nzPending]="'Checking'">
+    <nz-timeline-item>Create a services site 2015-09-01</nz-timeline-item>
+    <nz-timeline-item>Solve initial network problems 2015-09-01</nz-timeline-item>
+    <nz-timeline-item>Technical testing 2015-09-01</nz-timeline-item>
+  </nz-timeline>
+  <ng-template #dotTemplate>
+    <i nz-icon nzType="clock-circle-o" style="font-size: 16px;"></i>
+  </ng-template>
+</nz-card>

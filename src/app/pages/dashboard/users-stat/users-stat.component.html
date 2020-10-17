@@ -1,0 +1,29 @@
+<nz-card [nzBordered]="false" style="height: 100%;width: 100%;">
+  <h2>Users</h2>
+  <nz-divider></nz-divider>
+  <nz-row [nzGutter]="16">
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(1128 | number)!" [nzTitle]="'Pharmacies'" [nzPrefix]="prefixTpl"></nz-statistic>
+      <ng-template #prefixTpl><i nz-icon nzType="medicine-box"></i></ng-template>
+    </nz-col>
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(2560 | number)!" [nzTitle]="'Users'" [nzPrefix]="userPrefix"></nz-statistic>
+      <ng-template #userPrefix><i nz-icon nzType="user"></i></ng-template>
+      <!-- <nz-statistic [nzValue]="93" [nzTitle]="'Unmerged'" [nzSuffix]="'/ 100'"></nz-statistic> -->
+    </nz-col>
+  </nz-row>
+  <nz-row [nzGutter]="16" style="margin-top: 25px;">
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(11.28 | number: '1.0-2')!" [nzTitle]="'Active Users'" [nzPrefix]="prefixTplOne"
+        [nzSuffix]="'%'" [nzValueStyle]="{ color: '#3F8600' }">
+      </nz-statistic>
+      <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+    </nz-col>
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(9.3 | number: '1.0-2')!" [nzTitle]="'Idle Users'" [nzPrefix]="prefixTplTwo"
+        [nzSuffix]="'%'" [nzValueStyle]="{ color: '#CF1322' }">
+      </nz-statistic>
+      <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+    </nz-col>
+  </nz-row>
+</nz-card>

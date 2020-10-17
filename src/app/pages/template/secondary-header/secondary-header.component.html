@@ -1,0 +1,11 @@
+<div class="app-header-secondary">
+
+  <nz-breadcrumb [nzSeparator]="iconTemplate">
+    <nz-breadcrumb-item *ngFor="let crump of breadcrups">
+      {{ crump }}
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+  <ng-template #iconTemplate><span style="font-size: 18px;font-weight: 600; color: #3b3b98;">.</span>
+  </ng-template>
+
+</div>

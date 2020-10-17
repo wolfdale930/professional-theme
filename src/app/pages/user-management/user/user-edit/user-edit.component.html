@@ -1,0 +1,138 @@
+<h2>Create User</h2>
+<nz-tabset nzSize="large" [(nzSelectedIndex)]="index">
+
+  <nz-tab nzTitle="Basic">
+
+    <form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submitForm(form.value)">
+
+      <div nz-row [nzGutter]="16">
+
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>First Name</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="firstName" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>Last Name</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="lastName" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>Mobile</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="mobile" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>E-mail</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="email" type="email" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>Password</nz-form-label>
+            <nz-form-control>
+              <input nz-input type="password" formControlName="password" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>Confirm Password</nz-form-label>
+            <nz-form-control>
+              <input nz-input type="password" formControlName="confirm" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+      </div>
+
+    </form>
+
+  </nz-tab>
+
+  <nz-tab nzTitle="Address">
+
+    <form nz-form nzLayout="vertical" [formGroup]="addressForm" (ngSubmit)="submitForm(form.value)">
+
+      <div nz-row [nzGutter]="16">
+
+        <div nz-col [nzSpan]="24">
+          <nz-form-item>
+            <nz-form-label nzRequired>Line 1</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="line1" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="24">
+          <nz-form-item>
+            <nz-form-label>Line 2</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="line2" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="24">
+          <nz-form-item>
+            <nz-form-label>Line 3</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="mobile" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>State</nz-form-label>
+            <nz-form-control>
+              <nz-select formControlName="state" nzSize='large'>
+                <nz-option nzValue="Delhi" nzLabel="Delhi"></nz-option>
+                <nz-option nzValue="Maharashtra" nzLabel="Maharashtra"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzRequired>City</nz-form-label>
+            <nz-form-control>
+              <nz-select formControlName="city" nzSize='large'>
+                <nz-option nzValue="Delhi" nzLabel="Delhi"></nz-option>
+                <nz-option nzValue="Mumbai" nzLabel="Mumbai"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label>Pin Code</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="pin" nzSize='large' />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+      </div>
+
+    </form>
+
+  </nz-tab>
+
+</nz-tabset>
+
+<div style="display: flex;flex-direction: row; justify-content: end;">
+  <button nz-button nzType="default" (click)="index = index-1" style="border: none;" *ngIf="index > 0">Back</button>
+  <button nz-button nzType="primary" (click)="index = index+1" *ngIf="index < 1">Next</button>
+  <button nz-button nzType="primary" (click)="modalRef.close()" *ngIf="index == 1">Submit</button>
+</div>

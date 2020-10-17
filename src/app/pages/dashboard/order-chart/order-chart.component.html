@@ -1,0 +1,22 @@
+<nz-card [nzBordered]="false" class="graph-body" style="background-color: rgb(59,59,152);width: 100%;height: 100%;">
+
+  <h2 style="color: white;padding: 24px;">Orders</h2>
+
+  <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+    [colors]="lineChartColors" [legend]="false" [chartType]="lineChartType"></canvas>
+
+  <div style="display: flex; justify-content: center;padding-bottom: 20px;">
+    <nz-card [nzBordered]="false" style="width: 100%; margin-left:20px; margin-right: 10px;">
+      <i nz-icon nzType="file-text" nzTheme="outline" style="font-size: 30px; color: black;"></i><span
+        style="font-weight: 500;margin-left: 5px;">24</span>
+      <h4 style="color: black; font-weight: 500;line-height: 100%; margin-top: 15px;">New Presc.</h4>
+    </nz-card>
+    <nz-card [nzBordered]="false" style="width: 100%; margin-right:20px; margin-left: 10px;">
+      <i nz-icon nzType="inbox" nzTheme="outline" style="font-size: 30px; color: black;"></i><span
+        style="font-weight: 500;margin-left: 5px;">30</span>
+      <h4 style="color: black; font-weight: 500;line-height: 100%; margin-top: 15px;">New Orders</h4>
+    </nz-card>
+  </div>
+
+
+</nz-card>

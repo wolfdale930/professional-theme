@@ -1,0 +1,121 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+  overflow: hidden;
+  padding: 25px;
+}
+
+.logo-container {
+  display: none;
+  // flex: 1;
+}
+
+.router-container {
+  width: 100%;
+  z-index: 10;
+  flex: 1;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    overflow: hidden;
+    padding: 25px;
+  }
+
+  .logo-container {
+    display: none;
+    // flex: 1;
+  }
+
+  .router-container {
+    width: 100%;
+    z-index: 10;
+    flex: 1;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  .auth-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .logo-container {
+    width: 40%;
+    z-index: 10;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+  }
+
+  .router-container {
+    width: 60%;
+    z-index: 10;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+  .auth-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .logo-container {
+    width: 40%;
+    z-index: 10;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+  }
+
+  .router-container {
+    width: 60%;
+    z-index: 10;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+  .auth-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .logo-container {
+    width: 50%;
+    z-index: 10;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+  }
+
+  .router-container {
+    width: 50%;
+    z-index: 10;
+  }
+}

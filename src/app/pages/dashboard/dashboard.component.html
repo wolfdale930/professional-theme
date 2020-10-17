@@ -1,0 +1,58 @@
+<!-- <div nz-row [nzGutter]="16">
+  <div nz-col [nzSpan]="24">
+
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <i nz-icon nzType="home"></i>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        Dashboard
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+
+  </div>
+</div> -->
+
+<div nz-row data-aos="fade-down" [nzGutter]="[16,16]">
+
+  <div nz-col nzSm="24" nzMd="24" nzLg="12" nzXl="8" style="width: 100%;">
+    <app-order-chart></app-order-chart>
+  </div>
+
+
+  <div nz-col nzSm="24" nzMd="24" nzLg="12" nzXl="8">
+
+    <div nz-row [nzGutter]="[0,16]">
+      <div nz-col nzSpan="24">
+        <app-users-stat></app-users-stat>
+      </div>
+      <div nz-col nzSpan="24">
+        <app-order-presc-stat></app-order-presc-stat>
+      </div>
+    </div>
+
+  </div>
+
+  <div nz-col nzSm="24" nzMd="24" nzLg="12" nzXl="8" style="width: 100%;">
+    <app-activity></app-activity>
+  </div>
+
+  <!-- <div nz-col [nzSpan]="8">
+    <nz-card [nzBordered]="false">
+      <h2>Uptime</h2>
+      <nz-divider></nz-divider>
+      <nz-row [nzGutter]="16">
+        <nz-col [nzSpan]="12">
+          <nz-countdown [nzValue]="deadline" [nzTitle]="'Countdown'"></nz-countdown>
+        </nz-col>
+        <nz-col [nzSpan]="12">
+          <nz-countdown [nzValue]="deadline" [nzTitle]="'Million Seconds'" [nzFormat]="'HH:mm:ss'"></nz-countdown>
+        </nz-col>
+        <nz-col [nzSpan]="24" style="margin-top: 32px;">
+          <nz-countdown [nzValue]="deadline" [nzTitle]="'Day Level'"></nz-countdown>
+        </nz-col>
+      </nz-row>
+    </nz-card>
+  </div> -->
+
+</div>

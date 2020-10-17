@@ -1,0 +1,87 @@
+<div class="app-header">
+
+  <div class="search-box">
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton" nzSize="large" style="align-self: center;">
+      <input type="text" nz-input placeholder="Search" />
+    </nz-input-group>
+    <ng-template #suffixIconButton>
+      <button nz-button nzType="default" nzSearch nzSize="large"><i nz-icon nzType="search"></i></button>
+    </ng-template>
+  </div>
+
+
+  <button nz-button nz-popover nzPopoverPlacement="bottomRight" nzPopoverTrigger="click"
+    [nzPopoverContent]="contentTemplate" nzType="default" nzSize="large"
+    style="align-self: center; margin-right: 20px; border: 0;">
+    <i nz-icon nzType="message"></i>
+  </button>
+  <ng-template #contentTemplate>
+    <div>
+      <h4>Notifications</h4>
+      <nz-list nzItemLayout="horizontal">
+        <nz-list-item>
+          <nz-list-item-meta nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            nzDescription="Message from User: Lorem Ipsum.....">
+            <nz-list-item-meta-title>
+              <a href="https://ng.ant.design">title</a>
+            </nz-list-item-meta-title>
+          </nz-list-item-meta>
+        </nz-list-item>
+        <nz-list-item>
+          <nz-list-item-meta nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            nzDescription="Message from User: Lorem Ipsum.....">
+            <nz-list-item-meta-title>
+              <a href="https://ng.ant.design">title</a>
+            </nz-list-item-meta-title>
+          </nz-list-item-meta>
+        </nz-list-item>
+        <nz-list-item>
+          <nz-list-item-meta nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            nzDescription="Message from User: Lorem Ipsum.....">
+            <nz-list-item-meta-title>
+              <a href="https://ng.ant.design">title</a>
+            </nz-list-item-meta-title>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
+  </ng-template>
+
+  <button nz-button nzType="default" nzSize="large" class="profile-button" (click)="viewProfile = true">
+    <span>
+      <span>
+        Hi, <strong>User</strong>
+      </span>
+      <nz-avatar [nzShape]="'square'" nzText="U" style="color:#f56a00; background-color:#fde3cf;margin-left: 10px;">
+      </nz-avatar>
+    </span>
+
+  </button>
+
+</div>
+
+
+<nz-drawer [nzClosable]="false" [nzVisible]="viewProfile" nzPlacement="right" (nzOnClose)="viewProfile=false"
+  nzWidth="300px">
+  <div style="display: flex; flex-direction: column;height: 100%;">
+
+    <h2 style="margin-bottom: 0; font-weight: 500;">User Profile</h2>
+
+    <nz-divider></nz-divider>
+
+    <div style="display: flex;flex-direction: row;justify-content: center;">
+      <nz-avatar [nzShape]="'square'" [nzSize]="80" nzText="U"
+        style="color:#f56a00; background-color:#fde3cf;margin-right: 15px;">
+      </nz-avatar>
+      <div>
+        <h4>User Name</h4>
+        <span>Designation</span>
+      </div>
+    </div>
+
+    <button nz-button nzType="default" nzSize="large" style="margin-top: auto;" (click)="logout()">
+      <i nz-icon nzType="logout"></i> Logout
+    </button>
+
+  </div>
+</nz-drawer>

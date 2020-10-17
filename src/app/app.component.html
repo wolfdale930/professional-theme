@@ -1,0 +1,9 @@
+<div class="full-page-loader" *ngIf="showOverlay">
+  <ng-template #indicatorTemplate><i nz-icon nzType="loading" style="font-size: 80px;"></i></ng-template>
+  <div class="spinner-container">
+    <nz-spin nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
+    <h2 class="spinner-text">Template</h2>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

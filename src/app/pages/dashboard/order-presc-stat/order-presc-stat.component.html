@@ -1,0 +1,29 @@
+<nz-card [nzBordered]="false" style="height: 100%;width: 100%;">
+  <h2>Order & Prescreptions</h2>
+  <nz-divider></nz-divider>
+  <nz-row [nzGutter]="16">
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(51280 | number)!" [nzTitle]="'Prescriptions'" [nzPrefix]="prefixTpl"></nz-statistic>
+      <ng-template #prefixTpl><i nz-icon nzType="file-text"></i></ng-template>
+    </nz-col>
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(48962 | number)!" [nzTitle]="'Orders'" [nzPrefix]="userPrefix"></nz-statistic>
+      <ng-template #userPrefix><i nz-icon nzType="inbox"></i></ng-template>
+      <!-- <nz-statistic [nzValue]="93" [nzTitle]="'Unmerged'" [nzSuffix]="'/ 100'"></nz-statistic> -->
+    </nz-col>
+  </nz-row>
+  <nz-row [nzGutter]="16" style="margin-top: 25px;">
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(46563 | number)!" [nzTitle]="'Confirmed Orders'" [nzPrefix]="prefixConfirmed"
+        [nzValueStyle]="{ color: '#3F8600' }">
+      </nz-statistic>
+      <ng-template #prefixConfirmed><i nz-icon nzType="check" nzTheme="outline"></i></ng-template>
+    </nz-col>
+    <nz-col [nzSpan]="12">
+      <nz-statistic [nzValue]="(1648 | number)!" [nzTitle]="'Cancelled Orders'" [nzPrefix]="prefixCancel"
+        [nzValueStyle]="{ color: '#CF1322' }">
+      </nz-statistic>
+      <ng-template #prefixCancel><i nz-icon nzType="close" nzTheme="outline"></i></ng-template>
+    </nz-col>
+  </nz-row>
+</nz-card>

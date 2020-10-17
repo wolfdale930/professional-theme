@@ -1,0 +1,82 @@
+<!-- <nz-progress [nzPercent]="100" [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active"
+  [nzShowInfo]=false>
+</nz-progress> -->
+<nz-page-header nzBackIcon [nzGhost]="false" data-aos="fade-down">
+  <nz-page-header-title>User List</nz-page-header-title>
+  <nz-page-header-subtitle>View & Manage Users</nz-page-header-subtitle>
+  <nz-page-header-extra>
+    <button nz-button style="border: 0;">Export</button>
+    <button nz-button nzType="primary" (click)="createNewUser()">New User</button>
+  </nz-page-header-extra>
+  <nz-page-header-content>
+
+    <nz-back-top></nz-back-top>
+
+    <form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submitForm()">
+
+      <div nz-row [nzGutter]="16">
+        <div nz-col nzXs="12">
+          <nz-form-item>
+            <nz-form-label>Status</nz-form-label>
+            <nz-form-control>
+              <nz-select style="width: 100%;" formControlName="status">
+                <nz-option [nzValue]="2" nzLabel="All"></nz-option>
+                <nz-option [nzValue]="0" nzLabel="Active"></nz-option>
+                <nz-option [nzValue]="1" nzLabel="Inactive"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col nzXs="12">
+          <nz-form-item>
+            <nz-form-label>Search</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-input-group [nzSuffix]="suffixIconSearch">
+                <input type="text" nz-input placeholder="Search in fields" formControlName="search" />
+              </nz-input-group>
+              <ng-template #suffixIconSearch>
+                <i nz-icon nzType="search"></i>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+      </div>
+
+      <div nz-row [nzGutter]="16">
+        <div nz-col [nzSpan]="24">
+
+          <nz-table #rowSelectionTable nzShowPagination nzShowSizeChanger [nzData]="listOfData"
+            (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+            <thead>
+              <tr>
+                <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)">
+                </th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of rowSelectionTable.data">
+                <td [nzChecked]="setOfCheckedId.has(data.id)" [nzDisabled]="data.disabled"
+                  (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.age }}</td>
+                <td>{{ data.address }}</td>
+              </tr>
+            </tbody>
+          </nz-table>
+
+        </div>
+      </div>
+
+
+
+
+    </form>
+
+
+  </nz-page-header-content>
+</nz-page-header>
